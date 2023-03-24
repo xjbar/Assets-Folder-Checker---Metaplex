@@ -6,4 +6,5 @@ Prereqs:
 Python 3.x
 
 
-1. Run the script and follow instructions 
+1. Download the python file
+2. Run the python file and follow instructions 
