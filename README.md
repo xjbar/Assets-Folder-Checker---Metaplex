@@ -27,7 +27,7 @@ To install the packages run the following command:
 
 1. Clone the repository to your local machine:
 
-`git clone https://github.com/<username>/<repository>.git`
+`git clone https://github.com/xjbar/Assets-Folder-Checker---Metaplex.git`
 
 2. Change into the cloned directory:
 
