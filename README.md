@@ -2,7 +2,9 @@
 
 Getting errors in your Assets folder when tryign to upload a Candy Machine? 
 
-This script is a tool to verify the correctness of your Assets folder when uploading with Candy Machine from Metaplex. The script checks whether your Assets folder contains the correct number of PNG and JSON files and their filenames follow a specific naming convention.
+This script is a tool to verify the correctness of your Assets folder when uploading with Candy Machine from Metaplex. The script checks whether your Assets folder contains the correct number of PNG and JSON files and makes sure their filenames follow a specific naming convention. 
+
+If something is wrong in your assets folder, it will tell you whats wrong/missing so you can fix it.
 
 ## Getting Started
 
