@@ -8,11 +8,14 @@ from tqdm import tqdm
 PNG_PATTERN = r'^(\d{1,6})\.png$'
 JSON_PATTERN = r'^(\d{1,6})\.json$'
 
-def check_directory(directory: str, num_nfts: int) -> None:
+
+def check_directory(directory: str, num_nfts: int) -> bool:
     png_files = set()
     json_files = set()
     count = 0
-    files = [f for f in pathlib.Path(directory).glob('*') if f.is_file() and f.suffix in ['.png', '.json']]
+    files = [
+        f for f in pathlib.Path(directory).glob('*') if f.is_file() and f.suffix in ['.png', '.json']
+    ]
     with tqdm(total=len(files), desc='Checking files') as pbar:
         for file_path in files:
             file_name = file_path.name
@@ -45,13 +48,20 @@ def check_directory(directory: str, num_nfts: int) -> None:
         if len(png_files) != num_nfts:
             missing_png_files = set(range(num_nfts)).difference(png_files)
             logging.error(f'Missing PNG files: {missing_png_files}')
+            print(f'Missing PNG files: {missing_png_files}')
         if len(json_files) != num_nfts:
             missing_json_files = set(range(num_nfts)).difference(json_files)
             logging.error(f'Missing JSON files: {missing_json_files}')
+            print(f'Missing JSON files: {missing_json_files}')
+        return False
     elif png_files != json_files:
         logging.error('Mismatch between PNG and JSON files')
+        print('Mismatch between PNG and JSON files')
+        return False
     else:
         logging.info('Files are correct')
+        return True
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Check NFT files')
@@ -65,10 +75,15 @@ def main() -> None:
         sys.exit(1)
 
     log_level = logging.INFO if not args.verbose else logging.DEBUG
-    logging.basicConfig(filename='nft_check.log', level=log_level, format='%(levelname)s:%(message)s')
+    logging.basicConfig(filename='check_results.log', level=log_level, format='%(levelname)s:%(message)s')
 
-    check_directory(args.directory, args.num_nfts)
+    if check_directory(args.directory, args.num_nfts):
+        logging.info('Files are correct')
+        print('Files are correct')
+    else:
+        logging.error('Files are incorrect')
+        print('Files are incorrect')
+
 
 if __name__ == '__main__':
     main()
-
