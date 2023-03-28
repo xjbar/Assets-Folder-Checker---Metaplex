@@ -5,8 +5,8 @@ import argparse
 import logging
 from tqdm import tqdm
 
-PNG_PATTERN = r'^(\d{1,4})\.png$'
-JSON_PATTERN = r'^(\d{1,4})\.json$'
+PNG_PATTERN = r'^(\d{1,6})\.png$'
+JSON_PATTERN = r'^(\d{1,6})\.json$'
 
 def check_directory(directory: str, num_nfts: int) -> None:
     png_files = set()
