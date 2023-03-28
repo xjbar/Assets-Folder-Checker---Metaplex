@@ -31,7 +31,7 @@ To install the packages run the following command:
 
 2. Change into the cloned directory:
 
-cd `< repository >`
+`cd <repository>`
 
 ### Usage
 
