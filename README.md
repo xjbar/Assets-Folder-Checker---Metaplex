@@ -1,4 +1,4 @@
-# Metaplex Assets Folder Checker
+# Metaplex CM Assets Folder Checker
 
 Getting errors in your Assets folder when tryign to upload a Candy Machine? 
 
@@ -27,7 +27,8 @@ To install the packages run the following command:
 
 1. Clone the repository to your local machine:
 
-`git clone https://github.com/xjbar/Assets-Folder-Checker---Metaplex.git`
+`git clone https://github.com/xjbar/Metaplex-CM-Assets-Folder-Checker
+.git`
 
 2. Change into the cloned directory:
 
