@@ -59,7 +59,8 @@ The script checks whether the specified directory contains the correct number of
 If the number or the format of the files does not match the expected values, the script will output an error message and tell you what files are missing or wrong. If everything is correct, the script will output a success message.
 
 ### Contributing
-Contributions are welcome! Please submit a pull request if you have any improvements or bug fixes to the script. Message on Discord @ xjbar#3020 or Twitter @ xjbarnft
+Contributions are welcome! Please submit a pull request if you have any improvements or bug fixes to the script. M
+essage on Discord `@ xjbar#3020` or Twitter `@ xjbarnft`
 
 ### License
 This project is licensed under the MIT License
